@@ -40,7 +40,7 @@
   }, {
     "method": "shell.enter",
     "params": {
-      "message": "python run.py",
+      "message": "{{os.platform() === 'win32' ? 'python' : 'python3'}} run.py",
       "on": [{
         "event": null,
         "return": true
