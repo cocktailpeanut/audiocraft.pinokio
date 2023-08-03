@@ -1,0 +1,37 @@
+{
+  "run": [{
+    "method": "shell.run",
+    "params": {
+      "message": "git clone https://github.com/cocktailpeanut/audiocraft.git"
+    }
+  }, {
+    "method": "shell.run",
+    "params": {
+      "message": "python -m venv env",
+      "path": "audiocraft"
+    }
+  }, {
+    "method": "shell.start",
+    "params": {
+      "path": "audiocraft"
+    }
+  }, {
+    "method": "shell.enter",
+    "params": {
+      "message": "{{os.platform() === 'win32' ? 'env\\\\Scripts\\\\activate' : 'source env/bin/activate'}}",
+      "on": [{
+        "event": null,
+        "return": true
+      }]
+    }
+  }, {
+    "method": "shell.enter",
+    "params": {
+      "message": "pip install -r {{(new RegExp('amd','i').test(system.graphics().controllers && system.graphics().controllers[0].vendor) ? 'requirements-no-xformers.txt' : 'requirements.txt')}} -e .",
+      "on": [{
+        "event": null,
+        "return": true
+      }]
+    }
+  }]
+}
