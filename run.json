@@ -52,5 +52,17 @@
       "uri": "./0.wav",
       "target": "_blank"
     }
+  }, {
+    "method": "browser.open",
+    "params": {
+      "uri": "./1.wav",
+      "target": "_blank"
+    }
+  }, {
+    "method": "browser.open",
+    "params": {
+      "uri": "./2.wav",
+      "target": "_blank"
+    }
   }]
 }
