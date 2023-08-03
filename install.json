@@ -27,6 +27,15 @@
   }, {
     "method": "shell.enter",
     "params": {
+      "message": "pip install 'torch>=2.0'",
+      "on": [{
+        "event": null,
+        "return": true
+      }]
+    }
+  }, {
+    "method": "shell.enter",
+    "params": {
       "message": "pip install -r {{(new RegExp('amd','i').test(system.graphics().controllers && system.graphics().controllers[0].vendor) ? 'requirements-no-xformers.txt' : 'requirements.txt')}} -e .",
       "on": [{
         "event": null,
